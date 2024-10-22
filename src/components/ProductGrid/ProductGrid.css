@@ -1,0 +1,13 @@
+.container {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 4px;;
+}
+
+.productImg {
+    width: 150px;
+}
+
+h3 {
+    font-size: medium;
+}
