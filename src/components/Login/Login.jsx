@@ -51,15 +51,16 @@ function Login() {
     
     return (
     <>
-      <form onSubmit={handleSubmit}>
-        
-        <Input label="Email" id="email" type="email" name="email" onChange={handleChange}/>
-        <Input label="Mot de passe" id="password" type="password"  name="password" onChange={handleChange}/>
+      <div className="flex justify-center items-center min-h-screen">
+        <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
+          
+          <Input label="Email" id="email" type="email" name="email" onChange={handleChange}/>
+          <Input label="Mot de passe" id="password" type="password"  name="password" onChange={handleChange}/>
 
-        <button type="submit" className="submit-btn">Envoyer</button>
-    
-      </form>
-     
+          <button type="submit" className="submit-btn">Envoyer</button>
+      
+        </form>
+      </div>
     </>
 
     );

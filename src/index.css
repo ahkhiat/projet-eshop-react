@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  /* color: rgba(255, 255, 255, 0.87); */
   background-color: #ffffff;
 
   font-synthesis: none;
@@ -24,8 +24,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -65,4 +63,14 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.cart-container {
+  padding-top: 60px; 
+  color: black;
+}
+
+.product-page-container {
+  padding-top: 8rem;
+  color: black
 }
