@@ -6,7 +6,7 @@ import useCategories from '../../utils/hooks/useCategories'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { totalItems, cartItems } = useCart();
+  const { cartItems } = useCart();
   const { categories, isLoaded, error } = useCategories(); 
 
   const capitalizeFirstLetter = (string) => {
@@ -27,9 +27,9 @@ const Navbar = () => {
               ))}
           <Link to="/cart" className="relative text-white hover:text-gray-400">
             <i className="fas fa-shopping-cart"></i>
-            {totalItems > 0 && (
+            {cartItems.length > 0 && (
               <span className="absolute -top-1 -right-3 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
-                {totalItems}
+                {cartItems.length}
               </span>
             )}
           </Link>
