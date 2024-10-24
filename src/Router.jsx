@@ -13,6 +13,8 @@ import Products from './components/Products/Products';
 import ProductPage from './components/ProductPage/ProductPage';
 import Cart from './components/Cart/Cart';
 import { CartProvider } from './utils/context/CartContext';
+import OrderSummary from './components/OrderSummary/OrderSummary';
+import Payment from './components/Payment/Payment';
 
 function Router() {
   return (
@@ -26,7 +28,8 @@ function Router() {
                     <Route path="/logout" element={<Logout />}></Route>
                     <Route path="/cart" element={<Cart />}></Route>
                     <Route path="/product/:id" element={<ProductPage />} /> {/* Ajoutez cette ligne */}
-
+                    <Route path="/order-summary" element={<OrderSummary />} />
+                    <Route path="/payment" element={<Payment />}></Route>
                 </Routes>
         </BrowserRouter>
     </CartProvider>
