@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useCart } from "../../utils/context/CartContext";
+import { toast } from 'react-toastify';
+import { initializeStock, getStock, decrementStock } from "../../utils/stockUtils";
+
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -21,20 +24,27 @@ const ProductPage = () => {
     fetchProduct();
   }, [id]);
 
+  useEffect(() => {
+    initializeStock(id);
+  }, [id]);
+
+  const handleAddToCart = () => {
+    if(getStock(id) > 0) {
+      addToCart(product);
+      toast.success(`${product.title} a été ajouté au panier !`, {
+        position: "bottom-right",
+        autoClose: 3000,
+      });
+    } else {
+      alert("Le produit est en rupture de stock");
+    }
+  };
+
   if (!product) {
     return <div>Loading...</div>;
   }
 
   return (
-    // <div classNameName="product-page-container">
-    //   <h1 classNameName="text-2xl font-bold">{product.title}</h1>
-    //   <img src={product.image} alt={product.title} classNameName="w-1/2" />
-    //   <p classNameName="mt-2">{product.description}</p>
-    //   <p classNameName="mt-2 font-semibold">{product.price}€</p>
-    //   <button onClick={() => addToCart(product)} classNameName="mt-4 bg-blue-500 text-white py-2 px-4 rounded">
-    //     Ajouter au panier
-    //   </button>
-    // </div>
 
     <div className="product-page-container">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,13 +74,13 @@ const ProductPage = () => {
                             <span className="text-gray-600 font-semibold text-xl">{product.price} €</span>
                         </div>
                         <div>
-                            {/* <span className="font-bold text-gray-700 ">Availability:</span> */}
-                            {/* <span className="text-gray-600 dark:text-gray-300">In Stock</span> */}
-
+                            {getStock(id) > 5 ? 
+                              <span className="font-bold text-green-700">In Stock</span> : 
+                              <span className="font-bold text-red-500">Low stock ! Only {getStock(id)} remaining !</span>}
                         </div>
                         <div className="w-full mt-4">
                             <button 
-                            onClick={() => addToCart(product)} 
+                            onClick={handleAddToCart} 
                             className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
                             Add to Cart
                             </button>

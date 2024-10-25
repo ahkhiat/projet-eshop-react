@@ -15,6 +15,9 @@ import Cart from './components/Cart/Cart';
 import { CartProvider } from './utils/context/CartContext';
 import OrderSummary from './components/OrderSummary/OrderSummary';
 import Payment from './components/Payment/Payment';
+import PaymentSuccess from './components/PaymentSuccess/PaymentSuccess';
+import PaymentCancel from './components/PaymentCancel/PaymentCancel';
+
 
 function Router() {
   return (
@@ -30,6 +33,9 @@ function Router() {
                     <Route path="/product/:id" element={<ProductPage />} /> {/* Ajoutez cette ligne */}
                     <Route path="/order-summary" element={<OrderSummary />} />
                     <Route path="/payment" element={<Payment />}></Route>
+                    <Route path="/success" element={<PaymentSuccess />} />
+                    <Route path="/cancel" element={<PaymentCancel />} />
+
                 </Routes>
         </BrowserRouter>
     </CartProvider>

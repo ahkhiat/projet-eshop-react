@@ -3,7 +3,7 @@ import { useCart } from '../../utils/context/CartContext';
 import { loadStripe } from '@stripe/stripe-js';
 import axios from 'axios';
 
-const stripePromise = loadStripe('YOUR_PUBLIC_STRIPE_API_KEY');
+const stripePromise = loadStripe('pk_test_51OlduADNCIi7yha21ixaofRcEnxuaW9cMHrnMKF53LvJzuVlYOatqDD9TbGQEfaeK9WUi7luYlbgNfWElGHNU52500CEhNsetU');
 
 const Payment = () => {
   const { cartItems } = useCart();
@@ -20,7 +20,7 @@ const Payment = () => {
       const stripe = await stripePromise;
 
       // Créer une session de paiement sur votre serveur
-      const response = await axios.post('/create-checkout-session', {
+      const response = await axios.post('http://localhost:5000/create-checkout-session', {
         items: cartItems,
       });
 
@@ -41,12 +41,12 @@ const Payment = () => {
 
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-2xl font-bold mb-6">Paiement</h1>
+      <h1 className="text-2xl font-bold mb-6 text-black">Paiement</h1>
       {cartItems.length === 0 ? (
         <p className="text-lg text-gray-700">Votre panier est vide.</p>
       ) : (
         <div>
-          <h2 className="text-lg">Total à payer : {totalAmount}€</h2>
+          <h2 className="text-lg text-black">Total à payer : {totalAmount}€</h2>
           <button
             onClick={handlePayment}
             disabled={loading}
@@ -62,3 +62,4 @@ const Payment = () => {
 };
 
 export default Payment;
+
