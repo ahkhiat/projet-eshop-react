@@ -38,7 +38,9 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (productId) => {
     setCartItems((prevItems) => {
+
       const existingItem = prevItems.find(item => item.id === productId);
+      
       if (existingItem) {
         const currentStock = getStock(productId);
         localStorage.setItem(`stock_${productId}`, (currentStock + existingItem.quantity).toString());
