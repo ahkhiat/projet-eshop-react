@@ -28,10 +28,10 @@ Ouvrez votre navigateur et allez à l'adresse suivante :
 http://localhost:5173
 
 ## Structure du projet
-server/ : Contient le code du serveur.
-src/ : Contient le code du frontend.
-public/ : Contient les fichiers statiques.
-package.json : Contient les dépendances et scripts du projet.
+server/ : Contient le code du serveur.  
+src/ : Contient le code du frontend.  
+public/ : Contient les fichiers statiques.  
+package.json : Contient les dépendances et scripts du projet.  
 
 ## Technologies Utilisées
 React : Bibliothèque JavaScript pour construire des interfaces utilisateur.
