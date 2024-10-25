@@ -1,4 +1,4 @@
-# Projet React avec Vite
+# Projet d'e-Shop avec React et FakeStoreAPI
 
 Ce projet est une application web construite avec React et Vite. Suivez les instructions ci-dessous pour démarrer l'application.
 
