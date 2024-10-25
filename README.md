@@ -34,13 +34,14 @@ public/ : Contient les fichiers statiques.
 package.json : Contient les dépendances et scripts du projet.  
 
 ## Technologies Utilisées
-React : Bibliothèque JavaScript pour construire des interfaces utilisateur.
-Vite : Outil de build et de développement pour les applications modernes.
-Stripe : Intégration pour les paiements.
+React : Bibliothèque JavaScript pour construire des interfaces utilisateur.  
+Vite : Outil de build et de développement pour les applications modernes.  
+Stripe : Intégration pour les paiements.  
 FakeStoreAPI : API utilisée pour récupérer les produits.
 
 ## Instructions supplémentaires
 Assurez-vous d'avoir Node.js et npm installés sur votre machine.
 Si vous rencontrez des problèmes, vérifiez les journaux de la console pour plus d'informations.
+
 ## Auteur
 Thierry Leung - Développeur principal
